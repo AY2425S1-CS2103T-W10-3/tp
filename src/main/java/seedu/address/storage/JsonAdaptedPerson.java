@@ -109,7 +109,7 @@ class JsonAdaptedPerson {
         if (remark == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Remark.class.getSimpleName()));
         }
-        final Remark modelRemark = new Remark(""); // Remark is empty by default
+        final Remark modelRemark = new Remark(remark); // Remark is empty by default
 
         final Set<Tag> modelTags = new HashSet<>(personTags);
         return new Person(modelName, modelPhone, modelEmail, modelAddress, modelRemark, modelTags);
